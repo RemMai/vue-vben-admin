@@ -106,7 +106,7 @@
         return { ...props, ...unref(innerPropsRef) } as BasicTableProps;
       });
 
-      const isFixedHeightPage = inject(PageWrapperFixedHeightKey);
+      const isFixedHeightPage = inject(PageWrapperFixedHeightKey, ref(false));
       watchEffect(() => {
         unref(isFixedHeightPage) &&
           props.canResize &&
